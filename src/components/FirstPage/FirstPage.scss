@@ -1,0 +1,20 @@
+.fp-container {
+    width: 60%;
+
+    hr {
+        margin: 50px auto;
+    }
+
+    .sub-container {
+        display: flex;
+        justify-content: space-around;
+
+        .block {
+            button {
+                background-color: gray;
+                color: white;
+                padding: 5px;
+            }
+        }
+    }
+}

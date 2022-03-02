@@ -1,0 +1,25 @@
+.profile {
+    margin: auto;
+    width: fit-content;
+    padding: 20px;
+
+    .table {
+        display: table;
+
+        .row {
+            display: table-row;
+
+            .cell {
+                text-align: left;
+                display: table-cell;
+            }
+        }
+    }
+
+    .actions{
+
+        button{
+            margin: 5px;
+        }
+    }
+}

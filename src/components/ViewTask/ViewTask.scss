@@ -1,0 +1,31 @@
+.view-task {
+    width: 40%;
+    height: fit-content;
+    margin: 10px;
+    border: 1px solid #605e5e;
+    padding: 15px;
+
+    .error {
+        color: red;
+    }
+
+    .table {
+        display: table-row;
+
+        .row {
+            display: table-row;
+
+            .cell {
+                display: table-cell;
+                text-align: left;
+            }
+        }
+    }
+
+    .actions{
+
+        button{
+            margin: 10px 5px;
+        }
+    }
+}

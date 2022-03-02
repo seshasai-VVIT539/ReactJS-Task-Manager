@@ -1,0 +1,45 @@
+.login-container {
+
+    .table {
+        display: table;
+
+        .row {
+            display: table-row;
+        }
+
+        .cell {
+            padding: 2px 4px;
+            text-align: left;
+            display: table-cell;
+
+            span {
+                color: red;
+            }
+
+            #Age {
+                width: 50px;
+            }
+        }
+    }
+
+    .actions {
+        margin-top: 10px;
+        
+        .cell {
+            text-align: center;
+
+            button {
+                font-size: 16px;
+            }
+
+            #login {
+                color: white;
+                background: #057a05;
+            }
+        }
+    }
+
+    button {
+        background-color: aquamarine;
+    }
+}

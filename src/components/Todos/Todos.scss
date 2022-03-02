@@ -1,0 +1,13 @@
+.todos-container {
+    display: flex;
+    justify-content: space-around;
+
+    .todos {
+        width: 30%;
+
+        .task-link {
+            text-decoration: none;
+            color: black;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+.signup-container {
+    
+    .table {
+        display: table;
+
+        .row {
+            display: table-row;
+        }
+
+        .cell {
+            padding: 2px 4px;
+            text-align: left;
+            display: table-cell;
+
+            span {
+                color: red;
+            }
+
+            #Age {
+                width: 50px;
+            }
+        }
+
+        .actions .cell {
+            text-align: center;
+
+            button {
+                font-size: 16px;
+            }
+
+            #signup {
+                color: white;
+                background: #057a05;
+            }
+
+            #reset {
+                color: white;
+                background: #9f1616;
+            }
+        }
+    }
+
+    button {
+        background-color: aquamarine;
+    }
+}

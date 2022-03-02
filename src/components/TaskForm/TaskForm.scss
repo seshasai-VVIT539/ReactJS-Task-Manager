@@ -1,0 +1,22 @@
+.task-form {
+    .table {
+        display: table;
+        margin-top: 15px;
+
+        .row {
+            display: table-row;
+
+            .cell {
+                display: table-cell;
+            }
+        }
+    }
+
+    .error {
+        color: red;
+    }
+
+    button {
+        margin: auto 5px;
+    }
+}
