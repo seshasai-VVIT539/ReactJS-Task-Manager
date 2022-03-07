@@ -77,7 +77,7 @@ export function updateTask(token, id, task) {
 
     return fetch(urls.taskUrls.updateTaskById + id, requestOptions)
         .then(response => {
-            if (response.status === 404 || response.status == 400) {
+            if (response.status === 404 || response.status === 400) {
                 return { error: "something went wrong" };
             }
             return response.json()
@@ -99,10 +99,10 @@ export function deleteTaskById(token, id) {
 
     return fetch(urls.taskUrls.deleteTaskById + id, requestOptions)
         .then(response => {
-            if(response.status==200){
+            if (response.status === 200) {
                 return response.json();
-            }else{
-                return {error:'Something went wrong'};
+            } else {
+                return { error: 'Something went wrong' };
             }
         })
         .catch(error => error);

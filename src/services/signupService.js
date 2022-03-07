@@ -16,7 +16,7 @@ export default function signUp(loginUser) {
 
     return fetch(urls.signUp, requestOptions)
         .then(response => {
-            if (response.status == 400) {
+            if (response.status === 400) {
                 console.log(response);
                 return { 'error': 'Something went wrong' }
             }

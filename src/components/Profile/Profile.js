@@ -88,7 +88,10 @@ export default class Profile extends React.Component {
         } else {
             return (
                 <div className="profile">
-                    <img src={urls.baseUrl + "users/" + this.state.user._id + "/avatar"} />
+                    <img
+                        src={urls.baseUrl + "users/" + this.state.user._id + "/avatar"}
+                        alt="profile pic"
+                    />
                     <div className="table">
                         <div className="row">
                             <div className="cell">

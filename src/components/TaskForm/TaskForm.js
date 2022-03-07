@@ -6,7 +6,7 @@ import './TaskForm.scss';
 
 export function TaskForm(props) {
     let { id } = useParams();
-    if (id == "form") {
+    if (id === "form") {
         id = null;
     }
     const [task, setTask] = useState({
@@ -41,8 +41,8 @@ export function TaskForm(props) {
 
     const handleChange = (e) => {
         let { name, value } = e.target;
-        if (name == "completed") {
-            value = (value == "true");
+        if (name === "completed") {
+            value = (value === "true");
         }
         setTask((prevState) => ({
             ...prevState,
@@ -51,9 +51,9 @@ export function TaskForm(props) {
     };
 
     const submitForm = (e) => {
-        let temp={};
-        temp.description=task.description;
-        temp.completed=task.completed;
+        let temp = {};
+        temp.description = task.description;
+        temp.completed = task.completed;
         if (id == null) {
             createTask(token, temp)
                 .then((response) => {
@@ -121,7 +121,7 @@ export function TaskForm(props) {
                             type="radio"
                             name="completed"
                             value="true"
-                            checked={task.completed == true}
+                            checked={task.completed === true}
                             onChange={handleChange}
                         />
                         &nbsp;&nbsp;&nbsp;
@@ -130,7 +130,7 @@ export function TaskForm(props) {
                             type="radio"
                             name="completed"
                             value="false"
-                            checked={task.completed == false}
+                            checked={task.completed === false}
                             onChange={handleChange}
                         />
                     </div>
