@@ -3,7 +3,7 @@ import FirstPage from '../FirstPage/FirstPage';
 import Home from '../Home/Home';
 import LoginForm from '../LoginForm/LoginForm';
 import SignupForm from '../Signup Form/SignupForm';
-import { TokenContext } from '../../utils/contexts';
+import { LogoutContext, TokenContext } from '../../utils/contexts';
 import './App.scss';
 import { instanceOf } from 'prop-types';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -95,7 +95,9 @@ class App extends React.Component {
             element={
               this.state.loggedIn ?
                 <TokenContext.Provider value={this.state.token} >
-                  <Home logout={this.loggingOut} />
+                  <LogoutContext.Provider value={this.loggingOut}>
+                    <Home logout={this.loggingOut} />
+                  </LogoutContext.Provider>
                 </TokenContext.Provider>
                 : <Navigate to='..' />
             }

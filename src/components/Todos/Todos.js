@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { getAllTasks } from "../../services/taskService";
+import { isAlreadyLoggedIn } from "../../services/userService";
 import { TokenContext } from "../../utils/contexts";
 import { TaskForm } from "../TaskForm/TaskForm";
 import Todo from "../Todo/Todo";
@@ -13,19 +14,36 @@ class Todos extends React.Component {
         this.state = {
             todos: []
         }
+        this.isLoggedIn = this.isLoggedIn.bind(this);
+    }
+
+    isLoggedIn() {
+        let token = this.context;
+        return isAlreadyLoggedIn(token)
+            .then((result) => {
+                return result;
+            })
     }
 
     componentDidMount(prevProps, prevState) {
         let token = this.context;
-        getAllTasks(token)
-            .then((result) => {
-                this.setState({ todos: result });
-            });
+        this.isLoggedIn()
+            .then((loggedIn) => {
+                if (loggedIn) {
+                    getAllTasks(token)
+                        .then((result) => {
+                            this.setState({ todos: result });
+                        });
+                } else {
+                    this.props.logout();
+                }
+            })
     }
 
     render() {
         let path = document.location.pathname;
         return (
+
             <div className="todos-container">
                 <div className="todos">
                     <Link to="/tasks/form">
@@ -42,9 +60,10 @@ class Todos extends React.Component {
                 {!path.startsWith("/home") && !path.endsWith("form") && <ViewTask />}
                 {path.endsWith("form") && <TaskForm />}
             </div>
-        );
+        )
     }
 }
+
 
 Todos.contextType = TokenContext;
 

@@ -69,3 +69,22 @@ export function readProfilePic(token, id) {
             return { error: error };
         });
 }
+
+export function isAlreadyLoggedIn(token) {
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", "Bearer " + token);
+
+    var requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+        redirect: 'follow'
+    };
+
+    return fetch(urls.userUrls.readProfile, requestOptions)
+        .then(response => {
+            return response.status == 200;
+        })
+        .catch(error => {
+            return { error: error };
+        });
+}

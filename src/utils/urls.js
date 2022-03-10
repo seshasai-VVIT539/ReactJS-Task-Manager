@@ -7,6 +7,9 @@ const urls = {
     login: baseUrl + "users/login",
     logout: baseUrl + "users/logout",
     logoutAllDevices: baseUrl + "users/logoutAll",
+    oauth: {
+        google: baseUrl + "users/googleOAuth"
+    },
     userUrls: {
         uploadAvatar: baseUrl + "users/me/avatar",
         readProfile: baseUrl + "users/me",

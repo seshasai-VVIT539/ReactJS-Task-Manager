@@ -89,8 +89,8 @@ export default class Profile extends React.Component {
             return (
                 <div className="profile">
                     <img
-                        src={urls.baseUrl + "users/" + this.state.user._id + "/avatar"}
-                        alt="profile pic"
+                        src={urls.baseUrl + "users/" + this.state.user._id + "/avatar" }
+                        alt="profile pic not found"
                     />
                     <div className="table">
                         <div className="row">

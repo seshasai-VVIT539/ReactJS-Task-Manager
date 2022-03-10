@@ -1,4 +1,5 @@
 import React from "react";
+import { LogoutContext } from "../../utils/contexts";
 import NavBar from "../NavBar/NavBar";
 import Profile from "../Profile/Profile";
 import Todos from "../Todos/Todos";
@@ -16,7 +17,11 @@ class Home extends React.Component {
                 }
                 {
                     (path.startsWith("/home") || path.startsWith("/tasks")) &&
-                    <Todos />
+                    <LogoutContext.Consumer>
+                        {logout => (
+                            <Todos logout={logout} />
+                        )}
+                    </LogoutContext.Consumer>
                 }
             </div>
         );
